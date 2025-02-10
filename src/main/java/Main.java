@@ -24,7 +24,7 @@ public class Main {
     }
 
     private static void inserirFuncionarios() {
-        funcionarios.add(new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), "Operado"));
+        funcionarios.add(new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), "Operador"));
         funcionarios.add(new Funcionario("João", LocalDate.of(1990, 5, 12), new BigDecimal("2284.38"), "Operador"));
         funcionarios.add(new Funcionario("Caio", LocalDate.of(1961, 5, 2), new BigDecimal("9836.14"), "Coordernador"));
         funcionarios.add(new Funcionario("Miguel", LocalDate.of(1988, 10, 14), new BigDecimal("19119.88"), "Diretor"));
@@ -78,7 +78,7 @@ public class Main {
     }
 
     private static void imprimirFuncionarioMaisVelho() {
-        Funcionario maisVelho = Collections.max(funcionarios, Comparator.comparing(Pessoa::getDataNascimento));
+        Funcionario maisVelho = Collections.min(funcionarios, Comparator.comparing(Pessoa::getDataNascimento));
         int idade = LocalDate.now().getYear() - maisVelho.getDataNascimento().getYear();
         System.out.println("Funcionário mais velho: " + maisVelho.getNome() + ", Idade: " + idade);
     }
